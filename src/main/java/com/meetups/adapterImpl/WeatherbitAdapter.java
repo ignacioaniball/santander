@@ -74,15 +74,15 @@ public class WeatherbitAdapter implements WeatherAdapter {
 
 			WeatherDataResponse weatherDataResponseBody = weatherResponseEntity.getBody();
 			WeatherInformation weatherData = new WeatherInformation();
-			System.out.println(weatherDataResponseBody.getList().getJSONObject(4));
-//			for (WeatherInformation weather : weatherDataResponseBody.getList().getJSONObject(4))  {
-//				if(weather.getDt_txt().contains(weatherDataDTO.getMeetupDate())) {
-//					
-//					
-//					weatherData = parseGetWeatherResponse(weather);
-//					
-//				}
-//			}
+			for (WeatherInformation weather : weatherDataResponseBody.getList() ) {
+				if(weather.getDt_txt().contains(weatherDataDTO.getMeetupDate())) {
+					
+					System.out.println(weather.getDt_txt());
+					
+					weatherData = parseGetWeatherResponse(weather);
+					
+				}
+			}
 
 			LOGGER.debug("Weather response object: ");
 

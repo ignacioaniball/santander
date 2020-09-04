@@ -15,14 +15,14 @@ public class WeatherDataResponse {
 	public String cod;
 	public String message;
 	public String cnt;
-	public JSONArray list;
+	public List<WeatherInformation> list;
 	public JSONObject city;
 	
 	
-	public JSONArray getList() {
+	public List<WeatherInformation> getList() {
 		return list;
 	}
-	public void setList(JSONArray list) {
+	public void setList(List<WeatherInformation> list) {
 		this.list = list;
 	}
 	public JSONObject getCity() {
